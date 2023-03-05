@@ -14,7 +14,7 @@ class Testcase(APITestCase):
     def test_post_workout(self):
         response = self.client.post("/workout/workouts/", data={'title': 'treningE'})
         self.assertEqual(response.status_code, 201)
-        # self.assertEqual(response.content, b'{"url":"http://testserver/workouts/workouts/2/","title":"treningE"}')
+        # self.assertEqual(response.content, b'{"url":"http://testserver/workout/workouts/2/","title":"treningE"}')
 
 
 
