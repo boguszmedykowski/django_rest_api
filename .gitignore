@@ -4,4 +4,4 @@
 env
 
 db.sqlite3
-workout/__pycache__/*
+__pycache__/
