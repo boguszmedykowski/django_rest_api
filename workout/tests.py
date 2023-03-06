@@ -2,6 +2,9 @@ from rest_framework.test import APITestCase
 from django.test import TestCase
 from .models import Workout, Exercise
 from django.contrib.auth.models import User
+from django.urls import reverse
+from rest_framework import status
+
 
 class TestWorkout(APITestCase):
 
@@ -10,8 +13,10 @@ class TestWorkout(APITestCase):
 
 
     def test_get_workout(self):
-        response = self.client.get('/workout/workouts/1/')
+        # url = reverse('')
+        response = self.client.get('/workout/workouts/1/', format='json')
         self.assertEqual(response.status_code, 200)
+        # self.assertEqual(response.content[0]['title'], 'treningA')
 
     def test_post_workout(self):
         response = self.client.post("/workout/workouts/", data={'title': 'treningE'})
@@ -37,3 +42,11 @@ class TestCreateWorkout(TestCase):
         title = f"{exercise.title}"
         self.assertEqual(title, 'tescik')
         self.assertEqual(str(exercise), 'tescik')
+
+    def test_user(self):
+        user = User.objects.get(pk=1)
+        username = f"{user.username}"
+        self.assertEqual(username, 'test_user1')
+
+
+
