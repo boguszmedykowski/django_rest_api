@@ -1,7 +1,7 @@
-*/env
+
 /env
 /env/
 env
 
 db.sqlite3
-*/__pycache__
+workout/__pycache__/*
